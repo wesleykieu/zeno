@@ -14,7 +14,7 @@ export function Greeting({ name = "Good Evening, Wesley" }: { name?: string }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="pb-5"
+      className="pb-2"
     >
       <h2 className="text-2xl font-semibold tracking-tight text-foreground">
         {name}.

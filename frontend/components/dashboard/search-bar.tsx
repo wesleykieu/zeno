@@ -13,7 +13,7 @@ export function SearchBar() {
       initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="w-[520px]"
+      className="w-full max-w-[640px]"
     >
       <motion.div
         animate={{ scale: focused ? 1.01 : 1 }}

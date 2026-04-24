@@ -12,7 +12,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
   if (!session) redirect("/login");
 
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={false}>
       <TokenGuard />
       <AppSidebar user={session.user} />
       <SidebarInset>

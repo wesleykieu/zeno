@@ -7,21 +7,34 @@ import { Greeting } from "@/components/dashboard/greeting";
 
 export default function DashboardPage() {
   return (
-    <div className="relative h-[calc(100vh-3rem)] overflow-hidden flex items-center justify-center px-6">
-      <div className="absolute top-4 left-4">
+    <div className="h-[calc(100dvh-7rem)] overflow-hidden grid grid-cols-[300px_minmax(0,1fr)_260px] grid-rows-[auto_minmax(0,1fr)] gap-x-6 gap-y-3 max-w-[1800px] mx-auto">
+
+      {/* Row 1, Col 1 — greeting, always top-left */}
+      <div className="col-start-1 row-start-1 flex items-end">
         <Greeting />
       </div>
-      <div className="absolute top-0 left-0 h-full flex flex-col justify-center p-4 w-80">
-        <PriorityWidget />
-      </div>
-      <div className="absolute top-4 left-1/2 -translate-x-1/2">
+
+      {/* Row 1, Col 2 — search bar, top-center */}
+      <div className="col-start-2 row-start-1 flex items-end justify-center">
         <SearchBar />
       </div>
-      <DigestCard />
-      <div className="absolute top-0 right-0 h-full overflow-y-auto scrollbar-none flex flex-col gap-4 p-4 w-72">
+
+      {/* Col 3, rows 1–2 — right widgets span the full height so nothing clips */}
+      <div className="col-start-3 row-start-1 row-span-2 min-h-0 flex flex-col gap-3 overflow-y-auto scrollbar-none">
         <ScheduleWidget />
         <WatchersWidget />
       </div>
+
+      {/* Row 2, Col 1 — priority card fills the row */}
+      <div className="col-start-1 row-start-2 h-full min-h-0">
+        <PriorityWidget />
+      </div>
+
+      {/* Row 2, Col 2 — digest card fills the row, centered horizontally */}
+      <div className="col-start-2 row-start-2 h-full min-h-0 flex flex-col items-center">
+        <DigestCard />
+      </div>
+
     </div>
   );
 }

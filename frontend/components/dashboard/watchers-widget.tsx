@@ -64,9 +64,9 @@ export function WatchersWidget() {
       initial={{ opacity: 0, x: 16 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
-      className="w-full"
+      className="w-full h-full min-h-0"
     >
-      <Card className="bg-background/80 backdrop-blur-sm border shadow-lg">
+      <Card className="h-full min-h-0 flex flex-col bg-background/80 backdrop-blur-sm border shadow-lg">
         <CardHeader className="pb-2 pt-4 px-4">
           <div className="flex items-center justify-between">
             <CardTitle className="text-sm font-semibold">Watching</CardTitle>
@@ -127,7 +127,7 @@ export function WatchersWidget() {
 
         <Separator />
 
-        <CardContent className="px-4 pt-3 pb-4 space-y-2.5">
+        <CardContent className="px-4 pt-3 pb-4 space-y-2.5 flex-1 min-h-0 overflow-y-auto scrollbar-none">
           {watchers.map((item, i) => {
             const Icon = iconMap[item.icon] ?? Sparkles;
             return (

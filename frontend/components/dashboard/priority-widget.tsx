@@ -129,9 +129,9 @@ export function PriorityWidget() {
       initial={{ opacity: 0, x: -16 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-      className="w-full"
+      className="w-full h-full"
     >
-      <Card className="bg-background/80 backdrop-blur-sm border shadow-lg flex flex-col" style={{ height: "440px" }}>
+      <Card className="h-full bg-background/80 backdrop-blur-sm border shadow-lg flex flex-col">
         <CardHeader className="pb-3 pt-4 px-4 shrink-0">
           <div className="flex items-center justify-between">
             <CardTitle className="text-sm font-semibold">Priority</CardTitle>
